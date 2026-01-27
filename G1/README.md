@@ -2,4 +2,5 @@
 
 ## Contact
 
-* Trainer: trainer@mail.com
+* Trainer: Martin Panovski
+* Email: panovski.martin93@gmail.com
