@@ -122,5 +122,31 @@ for (let student of students) {
 console.log("");
 console.log("========= BREAK & CONTINUE =========");
 
+// debugger
 let numbers = [123, 23, 424, 343, 5, 54, 77];
 
+// BREAK
+// => used to terminate the loop immediately when a certain condition is met, regardless of whether the loop condition remains true or not
+
+// Example: Find if a certain number exists in an array
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === 424) {
+        console.log(`We found our number ! Yey ! ${numbers[i]}`);
+        break;
+    }
+    console.log(numbers[i]);
+}
+
+// CONTINUE
+// => skips the current iteration of the loop and proceeds to the next iteration
+// => the code after the continue keyword won't be executed during that iteration
+
+// Example: Log only numbers that are not divisible by 3
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 3 === 0) {
+        console.log(`The number ${numbers[i]} is divisible by 3. Don't print it`);
+        continue;
+    }
+    console.log("Number " + numbers[i]);
+    console.log("Some code...");
+}
