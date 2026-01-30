@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+	<meta charset="utf-8">
+ 
+	<title>Onboarding – DOM & Events</title>
+ 
+	<meta name="description" content="Onboarding JavaScript - DOM & Events">
+	<meta name="author" content="QA">
+ 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+ 
+	<link rel="stylesheet" href="assets/css/reveal.css">
+	<link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+ 
+	<link rel="stylesheet" href="assets/lib/css/zenburn.css">
+ 
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'assets/text/css';
+		link.href = window.location.search.match(/print-pdf/gi)
+			? 'assets/css/print/pdf.css'
+			: 'assets/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+ 
+<body>
+ 
+	<div class="reveal">
+		<div class="slides">
+ 
+			<!-- Slide 1 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Onboarding – DOM & Events</h1>
+				<h3>Looking back how DOM and Events work</h3>
+				<p>
+					<small>JavaScript Onboarding</small><br>
+					<small>Trainer: Tijana Stojanovska</small>
+					<small>Email: stojanovska_tijana@outlook.com</small>
+					<small>Avenga Academy 2025/26</small>
+				</p>
+			</section>
+ 
+			<!-- Slide 2 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Class Plan</h2>
+				<ul>
+					<li>Revisiting basic concepts of DOM and events</li>
+					<li>Examples of DOM and events</li>
+					<li>Exercises with DOM and events</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 3 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Looking Back at DOM</h2>
+				<ul>
+					<li><strong>DOM – Document Object Model</strong></li>
+					<li>DOM lives in the browser</li>
+					<li>It is a representation of the HTML and CSS</li>
+					<li>JavaScript uses the DOM to change the HTML and CSS of a page</li>
+					<li>If the HTML changes, the DOM changes as well</li>
+					<li>If the DOM changes, the HTML changes as well</li>
+					<li>We select an element, then change it</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 4 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Looking Back at Events</h2>
+				<ul>
+					<li>Events are captured interactions</li>
+					<li>To do something when an interaction happens, we need to catch an event</li>
+					<li>Event handlers are used to catch events</li>
+					<li>When the event is caught, predefined code can be executed</li>
+					<li>There are multiple ways of writing handlers</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 5 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Questions?</h1>
+			</section>
+ 
+		</div>
+	</div>
+ 
+	<script src="assets/lib/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+ 
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			mouseWheel: true
+		});
+	</script>
+ 
+</body>
+</html>
