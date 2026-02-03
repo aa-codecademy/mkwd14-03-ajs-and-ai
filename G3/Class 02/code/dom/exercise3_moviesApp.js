@@ -49,7 +49,7 @@ searchButton.addEventListener("click", function () {
 function searchMovies(searchText) {
     for (let movie of movies) {
        //if (movie.toUpperCase() == searchText.toUpperCase()) {
-        if (movie.toLowerCase() == searchText.toLowerCase()) {
+        if (movie.toLowerCase().trim() == searchText.toLowerCase().trim()) {
             return true; //if the movie and the search text are same - we have found the movie, so we return true 
         }
     }
@@ -61,7 +61,7 @@ function searchMoviesWithFlag(searchText) {
     let found = false; //default value is false beacause we have not found the movie yet
     for (let movie of movies) {
         //we cannot return from here because we need to use the flag after the loop
-        if (movie.toLowerCase() == searchText.toLowerCase()) {
+        if (movie.toLowerCase().trim() == searchText.toLowerCase().trim()) {
             found = true; //we have found the movie, so we set found to true. If the movie is not found, found remains false
             break; //we can stop searching further
         }

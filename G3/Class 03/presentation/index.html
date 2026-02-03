@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8">
+ 
+    <title>Module 1 – AJAX</title>
+ 
+    <meta name="description" content="AJAX Presentation">
+    <meta name="author" content="QA">
+ 
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+ 
+    <link rel="stylesheet" href="assets/css/reveal.css">
+    <link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+ 
+    <link rel="stylesheet" href="assets/lib/css/zenburn.css">
+ 
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'assets/text/css';
+        link.href = window.location.search.match(/print-pdf/gi)
+            ? 'assets/css/print/pdf.css'
+            : 'assets/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+ 
+<body>
+ 
+    <div class="reveal">
+        <div class="slides">
+ 
+            <!-- Slide 1 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h1>Module 1 – AJAX</h1>
+                <h3>Requesting & Handling External Data</h3>
+                <p>
+                    <small>Trainer: Tijana Stojanovska - stojanovska-tijana@outlook.com</small><br>
+                    <small>Avenga Academy 2025/26</small>
+                </p>
+            </section>
+ 
+            <!-- Slide 2 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>Class Plan</h2>
+                <ul>
+                    <li>What is AJAX</li>
+                    <li>What is JSON</li>
+                    <li>What are APIs</li>
+                    <li>Requesting data from external sources</li>
+                </ul>
+            </section>
+
+			<!-- AI Prompt Slide: Why Frontend Needs Data -->
+<section style="text-align: left;" data-background="#fff">
+    <h2>🤖 AI Question</h2>
+    <p><strong>Ask AI:</strong></p>
+    <ul>
+        <li>Why does a frontend application need data?</li>
+        <li>What kind of data do websites usually show?</li>
+        <li>Where does this data come from?</li>
+    </ul>
+</section>
+
+ 
+            <!-- Slide 3 -->
+            <section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+                <h2>Requesting External Data</h2>
+            </section>
+ 
+            <!-- Slide 4 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>How Do We Request Data?</h2>
+                <ul>
+                    <li>Everything on the internet communicates through HTTP</li>
+                    <li>Each time we click a link, an HTTP request is sent</li>
+                    <li>The server responds with data (HTML, JSON, images, etc.)</li>
+                </ul>
+            </section>
+
+			<!-- AI Prompt Slide: HTTP & Requests -->
+<section style="text-align: left;" data-background="#fff">
+    <h2>🤖 AI Question</h2>
+    <p><strong>Ask AI:</strong></p>
+    <ul>
+        <li>What is an HTTP request in simple terms?</li>
+        <li>What information is usually sent in a request?</li>
+        <li>What does a server usually send back?</li>
+    </ul>
+</section>
+
+<!-- AI Prompt Slide: Introducing AJAX -->
+<section style="text-align: left;" data-background="#fff">
+    <h2>🤖 AI Question</h2>
+    <p><strong>Ask AI:</strong></p>
+    <ul>
+        <li>What problem does AJAX solve?</li>
+        <li>What would websites feel like without AJAX?</li>
+        <li>Why is reloading a page every time a bad experience?</li>
+    </ul>
+</section>
+
+
+ 
+            <!-- Slide 5 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>What is AJAX?</h2>
+                <ul>
+                    <li>Asynchronous JavaScript And XML</li>
+                    <li>Allows sending HTTP requests without reloading the page</li>
+                    <li>Used to load data dynamically</li>
+                    <li>Makes modern web applications possible</li>
+                </ul>
+            </section>
+ 
+            <!-- Slide 6 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>Why Use AJAX?</h2>
+                <ul>
+                    <li>Pages do not reload when new data is needed</li>
+                    <li>Faster and smoother user experience</li>
+                    <li>Dynamic content loading</li>
+                    <li>Efficient communication with servers</li>
+                </ul>
+            </section>
+
+			<!-- AI Prompt Slide: AJAX in Real Life -->
+<section style="text-align: left;" data-background="#fff">
+    <h2>🤖 AI Question</h2>
+    <p><strong>Ask AI:</strong></p>
+    <ul>
+        <li>Give examples of websites that use AJAX</li>
+        <li>Which actions usually trigger AJAX requests?</li>
+        <li>Can a page work while waiting for data?</li>
+    </ul>
+</section>
+
+ 
+            <!-- Slide 7 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>AJAX Data Flow</h2>
+                <ul>
+                    <li>Client sends a request</li>
+                    <li>Server processes the request</li>
+                    <li>Server sends back a data package</li>
+                    <li>Client handles and displays the data</li>
+                </ul>
+            </section>
+ 
+            <!-- Slide 8 -->
+            <section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+                <h2>JSON</h2>
+            </section>
+ 
+            <!-- Slide 9 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>What is JSON?</h2>
+                <ul>
+                    <li>JavaScript Object Notation</li>
+                    <li>Lightweight data format</li>
+                    <li>Used for sending and receiving data</li>
+                    <li>Easy for humans and machines to read</li>
+                </ul>
+            </section>
+ 
+            <!-- Slide 10 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>Why JSON?</h2>
+                <ul>
+                    <li>Standard format for data exchange</li>
+                    <li>Works across different systems and languages</li>
+                    <li>Commonly returned by APIs</li>
+                    <li>Perfect for AJAX communication</li>
+                </ul>
+            </section>
+ 
+            <!-- Slide 11 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>JSON & JavaScript</h2>
+                <ul>
+                    <li>JSON text can be converted to JavaScript objects</li>
+                    <li>JavaScript objects can be converted to JSON</li>
+                    <li>This allows easy data manipulation in applications</li>
+                </ul>
+            </section>
+
+			<!-- AI Prompt Slide: JSON Thinking -->
+<section style="text-align: left;" data-background="#fff">
+    <h2>🤖 AI Question</h2>
+    <p><strong>Ask AI:</strong></p>
+    <ul>
+        <li>What happens if JSON is malformed?</li>
+        <li>Why is JSON safer than executable code?</li>
+        <li>Can other languages understand JSON?</li>
+    </ul>
+</section>
+
+<!-- AI Prompt Slide: Introducing APIs -->
+<section style="text-align: left;" data-background="#fff">
+    <h2>🤖 AI Question</h2>
+    <p><strong>Ask AI:</strong></p>
+    <ul>
+        <li>What is an API in simple words?</li>
+        <li>Why don’t databases talk directly to browsers?</li>
+        <li>Why is an API like a waiter or middleman?</li>
+    </ul>
+</section>
+
+
+ 
+            <!-- Slide 12 -->
+            <section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+                <h2>APIs</h2>
+            </section>
+ 
+            <!-- Slide 13 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>What are APIs?</h2>
+                <ul>
+                    <li>Application Programming Interface</li>
+                    <li>Server applications for communication</li>
+                    <li>Provide access to data or functionality</li>
+                </ul>
+            </section>
+ 
+            <!-- Slide 14 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>API Characteristics</h2>
+                <ul>
+                    <li>Used as an interface to data</li>
+                    <li>Can be public or private</li>
+                    <li>Some require authentication (API keys)</li>
+                    <li>Return data, usually in JSON format</li>
+                </ul>
+            </section>
+ 
+            <!-- Slide 15 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h2>Using APIs with AJAX</h2>
+                <ul>
+                    <li>Send HTTP requests from JavaScript</li>
+                    <li>Receive JSON data</li>
+                    <li>Process and display data dynamically</li>
+                </ul>
+            </section>
+ 
+            <!-- Slide 16 -->
+            <section style="text-align: left;" data-background="#fff">
+                <h1>Thank You!</h1>
+                <p><strong>Questions?</strong></p>
+            </section>
+ 
+        </div>
+    </div>
+ 
+    <script src="assets/lib/js/head.min.js"></script>
+    <script src="assets/js/reveal.js"></script>
+ 
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'convex',
+            transitionSpeed: 'default',
+            mouseWheel: true
+        });
+    </script>
+ 
+</body>
+</html>
