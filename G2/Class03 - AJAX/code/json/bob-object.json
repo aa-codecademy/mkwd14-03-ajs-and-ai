@@ -1,0 +1,22 @@
+[
+    {
+        "firstName": "Bob",
+        "lastName": "Bobsky",
+        "age": 25,
+        "isStudent": true,
+        "favouriteSubjects": [
+            "JavaScript",
+            "C#"
+        ]
+    },
+    {
+        "firstName": "Bob",
+        "lastName": "Bobsky",
+        "age": 25,
+        "isStudent": true,
+        "favouriteSubjects": [
+            "JavaScript",
+            "C#"
+        ]
+    }
+]
