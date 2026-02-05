@@ -15,7 +15,7 @@ button.addEventListener("click", function () {
                     console.log(data);
                     for(let student of data.students){
                         console.log(student);
-                        ul.innerHtml += "<li>" + student + "</li>";
+                        ul.innerHTML += "<li>" + student + "</li>";
                     }
                 })
                 .catch(function (jsonError) { //this is connected to the .json() - this will be executed if the call was unsuccessfull
