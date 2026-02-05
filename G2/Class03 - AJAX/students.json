@@ -1,0 +1,15 @@
+{
+  "trainer": "John Doe",
+  "assistant": "Jane Doe",
+  "students": [
+    "Bob",
+    "Samantha",
+    "Chris",
+    "Jill",
+    "Greg",
+    "Maria",
+    "Tom",
+    "Sue"
+  ],
+  "academy": "Code"
+}
