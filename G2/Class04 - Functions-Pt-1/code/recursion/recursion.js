@@ -63,3 +63,7 @@ function fibonacci(n) {
     }
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
+
+console.log("Fibonacci of 5 is ", fibonacci(5));
+console.log("Fibonacci of 10 is ", fibonacci(10));
+// console.log("Fibonacci of 10 is ", fibonacci(50)); // will take a while for the calculation to complete...
