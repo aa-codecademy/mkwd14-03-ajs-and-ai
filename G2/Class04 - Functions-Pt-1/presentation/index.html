@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+	<meta charset="utf-8">
+ 
+	<title>Functions Part 1</title>
+ 
+	<meta name="description" content="JavaScript Advanced - Functions">
+	<meta name="author" content="QA">
+ 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+ 
+	<link rel="stylesheet" href="assets/css/reveal.css">
+	<link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+ 
+	<link rel="stylesheet" href="assets/lib/css/zenburn.css">
+ 
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'assets/text/css';
+		link.href = window.location.search.match(/print-pdf/gi)
+			? 'assets/css/print/pdf.css'
+			: 'assets/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+ 
+<body>
+ 
+	<div class="reveal">
+		<div class="slides">
+ 
+			<!-- Slide 1 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Functions (Part 1)</h1>
+				<h3>Function Types, Scope & Recursion</h3>
+				<p>
+					<small>JavaScript Advanced</small><br>
+					<small>Avenga Academy 2025/26</small>
+				</p>
+			</section>
+ 
+			<!-- Slide 2 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>From Last Class</h2>
+				<ul>
+					<li>How do we request data from external sources?</li>
+					<li>What is AJAX?</li>
+					<li>Why is AJAX great?</li>
+					<li>What is JSON?</li>
+					<li>How can we transform JSON into a JavaScript object?</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 3 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Class Plan</h2>
+				<ul>
+					<li>Looking back at functions</li>
+					<li>Different function types</li>
+					<li>Anonymous, Arrow & Self-invoked functions</li>
+					<li>Recursion</li>
+					<li>Scope</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 4 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Functions Recap</h2>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>AI Assistant 🤖 – Understanding Functions 🤖</h2>
+    <ul>
+        <li>Ask AI: "Explain in simple words what a function is in JavaScript"</li>
+        <li>Ask AI: "Give an example of a function that calculates the sum of two numbers"</li>
+    </ul>
+</section>
+ 
+			<!-- Slide 5 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Why Are Functions Important?</h2>
+				<ul>
+					<li>Easy representation of human concepts in code</li>
+					<li>Organizing logic and data easily</li>
+					<li>Reusability of code</li>
+					<li>Cleaner and more readable applications</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 6 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Function Components</h2>
+				<ul>
+					<li>Parameters – input data</li>
+					<li>Return value – output data</li>
+					<li>Function body – logic</li>
+					<li>Can be called multiple times</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 7 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Calling Functions</h2>
+				<ul>
+					<li>Functions can be called from anywhere</li>
+					<li>They always execute at the same definition point</li>
+					<li>Helps avoid code duplication</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 8 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Function Types</h2>
+			</section>
+ 
+			<!-- Slide 9 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Anonymous Functions</h2>
+				<ul>
+					<li>Functions without a name</li>
+					<li>Used when we need a function on the spot</li>
+					<li>Commonly passed as parameters</li>
+					<li>Often used in callbacks</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 10 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Arrow Functions</h2>
+				<ul>
+					<li>Shorter syntax for anonymous functions</li>
+					<li>Easier to read and write</li>
+					<li>Very common for callbacks</li>
+					<li>Not recommended for object methods</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>AI Assistant 🤖 – Function Types</h2>
+    <ul>
+        <li>Ask AI: "What are the differences between anonymous, arrow, and self-invoked functions?"</li>
+        <li>Ask AI: "Provide a short code example for each type"</li>
+        <li>Discuss with students which function type is preferable in different scenarios</li>
+    </ul>
+</section>
+ 
+			<!-- Slide 11 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Self-Invoked Functions (IIFE)</h2>
+				<ul>
+					<li>Functions that execute immediately</li>
+					<li>Used only once</li>
+					<li>Run inside a closed scope</li>
+					<li>Helps avoid global scope pollution</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 12 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Recursion</h2>
+			</section>
+ 
+			<!-- Slide 13 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What is Recursion?</h2>
+				<ul>
+					<li>Functions can call other functions</li>
+					<li>A function can call itself</li>
+					<li>This behavior is called recursion</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 14 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Recursive Functions</h2>
+				<ul>
+					<li>Must have a stopping condition (fail-safe)</li>
+					<li>Prevents infinite function calls</li>
+					<li>Common in tree and nested structures</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>AI Assistant 🤖 – Recursion & Scope</h2>
+    <ul>
+        <li>Ask AI: "Explain recursion in simple words"</li>
+        <li>Ask AI: "Give a beginner-friendly example of a recursive function"</li>
+        <li>Ask AI: "Explain scope in JavaScript with examples"</li>
+        <li>Prompt students to write their own small recursive function or variable example to test understanding</li>
+    </ul>
+</section>
+ 
+			<!-- Slide 15 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Scope</h2>
+			</section>
+ 
+			<!-- Slide 18 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Thank You!</h1>
+				<p><strong>Questions?</strong></p>
+			</section>
+ 
+		</div>
+	</div>
+ 
+	<script src="assets/lib/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+ 
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			mouseWheel: true
+		});
+	</script>
+ 
+</body>
+</html>
