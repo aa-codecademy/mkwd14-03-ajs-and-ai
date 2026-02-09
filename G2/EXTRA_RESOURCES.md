@@ -20,6 +20,20 @@ Use these when you want to **learn, read, or look things up**.
 - 🔗 https://codepen.io/  
   Online editor for experimenting with HTML, CSS, and JavaScript
 
+- 🔗 [W3Schools](https://www.w3schools.com/js/)  
+  Beginner-friendly tutorials and references
+
+
+## 🎨 UI & Frontend Frameworks
+
+Use these to **learn UI design, Bootstrap, and component-based styling**.
+
+- 🔗 [Bootstrap Documentation](https://getbootstrap.com/)  
+  Official Bootstrap docs to learn layout, components, and utilities
+
+- 🔗 [Tailwind CSS](https://tailwindcss.com/)  
+  Utility-first CSS framework for rapid UI development
+
 
 ## 🧠 Practice – Problem Solving
 
@@ -43,3 +57,14 @@ Use these APIs to practice:
 
 - 🔗 https://dummyjson.com/  
   Fake REST API for testing and prototyping (users, products, posts, etc.)
+
+
+## ✏️ Diagrams & Planning Tools
+
+Use these tools for **diagramming, flowcharts, and planning**.
+
+- 🔗 [Excalidraw](https://excalidraw.com/)  
+  Simple online whiteboard for sketches and flowcharts
+
+- 🔗 [Draw.io / diagrams.net](https://app.diagrams.net/)  
+  Free tool for creating flowcharts, UML diagrams, and wireframes
