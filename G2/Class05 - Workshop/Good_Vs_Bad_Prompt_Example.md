@@ -56,7 +56,7 @@
 ## 🗝️ Key Lesson 
 
 Good prompts:
-- Give context
+- Give context (review https://www.youtube.com/watch?v=FN2RM-CHkuI again if needed 😄)
 - Define constraints
 - Specify the format of the answer
 - Explain your learning goal
@@ -67,5 +67,3 @@ Bad prompts:
 - Expect magic solutions
 
 ## 🎯 Ask well. Understand more. Code better.
-
-
