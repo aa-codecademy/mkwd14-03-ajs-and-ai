@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+	<meta charset="utf-8">
+ 
+	<title>Module 3 – Functions</title>
+ 
+	<meta name="description" content="JavaScript Advanced - First Class & Higher Order Functions">
+	<meta name="author" content="QA">
+ 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+ 
+	<link rel="stylesheet" href="assets/css/reveal.css">
+	<link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+ 
+	<link rel="stylesheet" href="assets/lib/css/zenburn.css">
+ 
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'assets/text/css';
+		link.href = window.location.search.match(/print-pdf/gi)
+			? 'assets/css/print/pdf.css'
+			: 'assets/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+ 
+<body>
+ 
+	<div class="reveal">
+		<div class="slides">
+ 
+			<!-- Slide 1 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Module 3 – Functions</h1>
+				<h3>First-Class Citizens & Higher Order Functions</h3>
+				<p>
+					<small>JavaScript Advanced</small><br>
+					<small>Avenga Academy 2025/26</small>
+				</p>
+			</section>
+ 
+			<!-- Slide 2 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>From Last Class</h2>
+				<ul>
+					<li>Why were functions useful?</li>
+					<li>What are anonymous functions?</li>
+					<li>What are arrow functions?</li>
+					<li>When do we use self-invoked functions?</li>
+					<li>What is recursion?</li>
+					<li>Difference between function and block scope?</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 3 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Class Plan</h2>
+				<ul>
+					<li>Functions as first-class citizens</li>
+					<li>Functions as parameters and return values</li>
+					<li>Functions in variables</li>
+					<li>Arguments</li>
+					<li>Higher order functions</li>
+				</ul>
+			</section>
+
+			<!-- AI Slide 1 -->
+<section style="text-align: left;" data-background="#f7f7f7">
+	<h2>🤖 Ask AI: Thinking About Functions</h2>
+	<ul>
+		<li><strong>Prompt:</strong></li>
+	</ul>
+	<pre><code>
+Explain what a function is in JavaScript 
+using a real-life example (no code).
+	</code></pre>
+	<ul>
+		<li>Do you agree with the explanation?</li>
+		<li>What part sounds confusing?</li>
+	</ul>
+</section>
+ 
+			<!-- Slide 5 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Functions as First-Class Citizens</h2>
+				<ul>
+					<li>Functions can be used as any other entity</li>
+					<li>They are treated like variables</li>
+					<li>They can be passed, returned, or stored</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 6 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Can We Do With Functions?</h2>
+				<ul>
+					<li>Store them in variables</li>
+					<li>Pass them as parameters</li>
+					<li>Return them from other functions</li>
+					<li>Use them as object properties</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 7 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Functions as Parameters</h2>
+				<ul>
+					<li>Functions can be passed to other functions</li>
+					<li>Commonly used for callbacks</li>
+					<li>Allows flexible and reusable logic</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 8 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Functions as Return Values</h2>
+				<ul>
+					<li>Functions can return other functions</li>
+					<li>Enables dynamic behavior</li>
+					<li>Common in advanced patterns</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 9 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Functions in Variables</h2>
+				<ul>
+					<li>Functions can be stored in variables</li>
+					<li>Variables can be reassigned</li>
+					<li>Helps create flexible code structures</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 10 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Arguments</h2>
+				<ul>
+					<li>Arguments represent values passed to functions</li>
+					<li>Functions can accept any number of arguments</li>
+					<li>Useful for generic functionality</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 11 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Higher Order Functions</h2>
+			</section>
+
+			<!-- AI Slide 3 -->
+<section style="text-align: left;" data-background="#f7f7f7">
+	<h2>🤖 Ask AI: Higher Order Functions</h2>
+
+	<pre><code>
+Explain higher order functions 
+without using map, filter, or reduce.
+
+Use a simple everyday analogy.
+	</code></pre>
+
+	<ul>
+		<li>Why would this be useful in real projects?</li>
+	</ul>
+</section>
+
+ 
+			<!-- Slide 12 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Are Higher Order Functions?</h2>
+				<ul>
+					<li>Functions that accept other functions</li>
+					<li>Or return other functions</li>
+					<li>Used for complex and reusable logic</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 13 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Why Use Higher Order Functions?</h2>
+				<ul>
+					<li>Cleaner and shorter code</li>
+					<li>Better readability</li>
+					<li>Functional programming style</li>
+					<li>Logic can be chained</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 14 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Common Higher Order Functions</h2>
+				<ul>
+					<li>filter()</li>
+					<li>map()</li>
+					<li>reduce()</li>
+					<li>sort()</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 15 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Chaining Higher Order Functions</h2>
+				<ul>
+					<li>Multiple higher order functions can be chained</li>
+					<li>Each function transforms the data</li>
+					<li>Builds complex logic step by step</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 19 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Thank You!</h1>
+				<p><strong>Questions?</strong></p>
+			</section>
+ 
+		</div>
+	</div>
+ 
+	<script src="assets/lib/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+ 
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			mouseWheel: true
+		});
+	</script>
+ 
+</body>
+</html>
