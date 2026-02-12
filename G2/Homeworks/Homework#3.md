@@ -16,7 +16,7 @@ There is a JSON file with students. Make a call to the file and get the followin
 * Count of students using google mail
 * The average age of female students living in Skopje
 
-**Link:** https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/Samples/students_v2.json
+**Link:** https://raw.githubusercontent.com/aa-codecademy/mkwd14-03-ajs-and-ai/refs/heads/main/G2/Homeworks/students.json
 
 
 ## Task 2
