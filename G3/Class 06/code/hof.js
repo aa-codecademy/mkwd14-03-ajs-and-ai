@@ -80,6 +80,8 @@ let studentDesc = students //here we have the original array of students
 .map(student => `${student.firstName} ${student.lastName} ${student.age}`) //here we use the map function on the already filtered array and the result of this map function is another array, but now it only consists of strings with the description
 .forEach(sd => console.log(sd)); //here we are working with the student description array (only strings) and we iterate through it and print each string
 
+let filteredArray = students 
+.filter(s => s.averageGrade > 3);
 
 let studentFullNameLength = students
 .map(s => `${s.firstName}${s.lastName}`) //here the result will be an array of strings that consists of students full name
@@ -100,7 +102,6 @@ students //here we have the original array of students
 // students
 // .map(returnStudentInfo) //here we will have only strings with students info
 // .filter(s => s.lastName.length > 5) //here lastName is not defined, because here we are working with the previous array of strings - we are not working with the objects students anymore after the map
-
 
 console.log("====reduce======");
 let studentAvgGrades = students.map(s => s.averageGrade); //studentAvgGrades is an array of numbers - all the avg grades
@@ -149,3 +150,31 @@ console.log(sumOfNumbers); //here we will have a number that is the sum of all t
 
 let concatenatedNumbers = numbers.reduce(concatenate, "");
 console.log(concatenatedNumbers); //here the result will be a string 123456
+
+console.log("====sort======");
+//SORT CHANGES THE ORIGINAL ARRAY
+
+//<0 -> a.averageGrade (the first alement in a-b) should be in the postion with lower index (for example if we had 2 and 3 -> the result would be -1, that is <0, that means that the 2 should be before the 3)
+//=0 -> the elements have the same value, nothing changes
+//>0 b.averageGrade (the second element in a-b) should be in the position with lower index (they should switch places)
+students.sort((a,b) => a.averageGrade - b.averageGrade); //asc
+
+students.sort((a,b) => b.averageGrade - a.averageGrade); //desc
+
+//if we don't want to change the original array we can create a copy of the array and sort that one
+
+//at this moment students is sorted in desc order
+function copyArray(array){
+    let copiedArray = [];
+    array.forEach(item => copiedArray.push(item)); //we add the elements one by one, we copy them
+    return copiedArray;
+}
+
+let copy = copyArray(students);
+
+copy.sort((c1, c2) => c1.averageGrade - c2.averageGrade); //asc
+
+console.log("copy");
+console.log(copy);
+console.log("students");
+console.log(students);

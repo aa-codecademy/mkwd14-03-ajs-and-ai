@@ -98,3 +98,4 @@ function longestString(){
 }
 
 longestString("Bob", "John", "Programming", "Avenga");
+longestString("Web Programming", "Avenga");
