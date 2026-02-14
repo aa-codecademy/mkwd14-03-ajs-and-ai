@@ -1,6 +1,7 @@
 # Homework #3 📃
 
 ### Use higher order functions to find the answers ⚠️
+### NOTE: You are NOT required to display the fetched data on the UI. The task is to practice higher-order functions and data manipulation only. Console logging the results is enough.
 
 ## Task 1
 
