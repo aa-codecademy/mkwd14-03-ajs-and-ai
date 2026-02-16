@@ -92,7 +92,6 @@ const studentsNameAndAge = students.map(student => ({ firstName: student.firstNa
 console.log(studentsNameAndAge); // however, you would typically create new instances from existing constructor function / class
 
 
-
 // ===> Combining filter() and map()
 // EXAMPLE: Get students full names of all the female students
 // const femaleStudentsNames = students.map(s => `${s.firstName} ${s.lastName}`).filter(s => s.gender === "Female");
@@ -143,6 +142,10 @@ console.log(studentsAverageAgeDebug);
 
 console.log("");
 console.log("========== sort ==========");
+// => Sorts the elements of an array in place
+// => Returns the sorted array
+// => Modifies the original array
+// => Usecase: ordering data, sorting by properties, ranking elements, etc.
 
 // Example 1: Sorting numbers
 const numbersSort = [-4, 10, 34, -25, 5, 33, 100, -1000];
@@ -171,6 +174,11 @@ students.sort((a, b) => b.firstName.localeCompare(a.firstName)) // DESC
 
 console.log("");
 console.log("========== toSorted ==========");
+// => Creates a NEW sorted array without modifying the original
+// => Returns the sorted array
+// => Does NOT modify the original array (unlike sort())
+// => Usecase: when you need to sort data but preserve the original order
+// => Available in modern JavaScript (ES2023)
 
 const names = ["Bob", "John", "Ana", "Greg"];
 
