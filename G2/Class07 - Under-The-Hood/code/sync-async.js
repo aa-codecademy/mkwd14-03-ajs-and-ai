@@ -14,11 +14,16 @@ console.log("=============== Debugging ===============");
 console.log("");
 console.log("=============== Synchronous and asynchronous executing ===============");
 // => JAVASCRIPT IS SINGLE THREADED !!! 
-
-
+// => the code is executed only on one place in the browser (the Call Stack)
+// => at any given point in time, that single JS thread is running at most ONE line of JS code
 
 console.log("");
 console.log("=============== Synchronous ===============");
+// ***Synchronous execution***
+// => code is executed sequentially, one line at a time
+// => each line of code must be completed before moving on to the next one
+// => blocking nature
+// NOTE: Synchronous code always has PRIORITY in JavaScript.
 
 function first() {
     console.log("First thing !");
@@ -35,6 +40,7 @@ function fibonacci(n) {
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
+// Heavy operation, the Call Stack is blocked...
 // let result = fibonacci(100);
 // console.log(result);
 
@@ -47,9 +53,16 @@ first();
 second();
 
 
+
 console.log("");
 console.log("=============== Asynchronous ===============");
-
+// ***Asynchronous execution***
+// => ability of the program to perform tasks 'in the background'
+// => started executing some code, but not waiting for it to complete before moving on to the next line of code
+// => when one line of code gets executed later on
+// => most common examples: 
+// 1) making http request with fetch (Fetch API) & handling the responses without freezing the UI
+// 2) handling events
 
 // debugger;
 
@@ -94,6 +107,8 @@ console.log("This is printed after Students ?");
 
 
 // ===> Synchronous vs Asynchronous execution
+
+// ==> Synchronous
 console.log(1);
 console.log(2);
 console.log(3);
@@ -102,10 +117,15 @@ console.log(3);
 // 2
 // 3
 
-setTimeout(() => console.log(4), 0)
+// ==> Asynchronous
+setTimeout(() => console.log(4), 0) // even though delay is 0ms, this is still asynchronous
+
 console.log(5);
 setTimeout(() => console.log(6), 2000)
 // Result
 // 5
 // 4
 // 6
+
+// NOTE: Synchronous code always has PRIORITY in JavaScript.
+// Useful tool: https://jsflow.info/

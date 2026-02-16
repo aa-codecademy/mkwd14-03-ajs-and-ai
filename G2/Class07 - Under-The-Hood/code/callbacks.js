@@ -41,11 +41,12 @@ function performAsyncOperation(callback) {
 // 4) Higher Order Functions callbacks
 let testArray = [1, 2, 3, 4, 5, 6, 7];
 // testArray.forEach(n => console.log(n));
+// n => console.log(n)   ==> callback function
 
 
 // 5) Making request to an API
-
 function renderDataFromApi(url, renderFunctionCallback) {
+    // the anonymous function in .then & .catch, also a callback
     fetch(url)
         .then(response => response.json())
         .then(result => renderFunctionCallback(result))
@@ -66,7 +67,7 @@ renderDataFromApi(USER_URL, function (data) {
 renderDataFromApi(USER_URL, data => {
     console.log(data)
 });
-
+// they are all doing the same thing, the only difference is the SYNTAX !
 
 
 console.log("");
@@ -83,7 +84,6 @@ function someAsyncOperation(callback) {
     console.log("Processing...");
 }
 someAsyncOperation(() => console.log("GREAT JOB !!!"))
-
 
 function functionArguments(func1, func2) {
     console.log("Executing functions ...");
