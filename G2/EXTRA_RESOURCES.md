@@ -24,6 +24,24 @@ Use these when you want to **learn, read, or look things up**.
   Beginner-friendly tutorials and references
 
 
+## ⚙️ JavaScript Under the Hood (How JavaScript Really Works)  
+
+Use these resources to **visualize and understand how JavaScript engines work internally**  
+(call stack, heap, event loop, async behavior, execution context, etc.).
+
+- 🔗 https://jsflow.info/  
+  Interactive visualizer for JavaScript execution flow (call stack, event loop, async tasks)
+
+- 🔗 https://latentflip.com/loupe/  
+  Visual tool that shows the call stack, event loop, and callback queue in real time
+
+- 🔗 https://v8.dev/docs  
+  Official documentation of the V8 JavaScript engine (used in Chrome and Node.js)
+
+- 🔗 https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop  
+  MDN explanation of the Event Loop and concurrency model
+
+
 ## 🎨 UI & Frontend Frameworks
 
 Use these to **learn UI design, Bootstrap, and component-based styling**.
