@@ -19,6 +19,7 @@ function changeValue(num){
 }
 
 console.log("Number before calling changeVal " + number); //6
+//let num = number //by value
 changeValue(number); //pass by value -> primitive type (when we pass on a primitive type (number, string, bool..) in the background a literal copy is made in another place, so any changes on the original do not affect the copy)
 console.log("Number after calling changeVal " + number); //6
 
@@ -73,7 +74,7 @@ function changeObj (obj){
 
 console.log("Obj1 before changeObj");
 console.log(obj1);
-changeObj(obj1); //by reference
+changeObj(obj1); // let obj = obj1 -> by reference
 console.log("Obj1 after changeObj");
 console.log(obj1); //both obj1 and obj2 will have the new prop2
 console.log(obj2);
