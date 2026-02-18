@@ -10,13 +10,6 @@ You will create a function called `myFetch(url)` that:
 - Resolves with fake data when the request is successful  
 - Rejects with an error when the request fails (for e.g. if no url is provided)  
 
-This exercise will help you understand:
-- How Promises work
-- How async operations are handled in JavaScript
-- How real APIs like `fetch()` behave under the hood  
-
----
-
 ## ✅ Requirements  
 
 1. Create a function called `myFetch(url)`  
@@ -25,3 +18,7 @@ This exercise will help you understand:
 4. If the URL contains the word `"success"`, resolve the Promise with fake JSON data  
 5. Otherwise, reject the Promise with an error message  
 6. Use `.then()` and `.catch()` to handle the result  
+
+## ⚠️ BONUS  
+
+Once you're comfortable with the basics, try upgrading myFetch to make a real HTTP request using XMLHttpRequest instead of setTimeout. 

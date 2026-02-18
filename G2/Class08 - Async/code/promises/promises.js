@@ -1,7 +1,6 @@
 console.log("======================= PROMISES =======================");
 // => better way for handling asynchronous operations
 // => object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value
-// => !!!!!!!!!!!!!! VO OVOJ OBJEKT E SMESTEN ISHODOT NA NEKOJA ASINHRONA OPERACIJA
 
 // It has three states:
 // 1️) Pending  - The initial state. The operation has started but has not yet completed (neither resolved nor rejected).
@@ -9,7 +8,6 @@ console.log("======================= PROMISES =======================");
 // 3️) Rejected  - The operation failed, and the promise is rejected with an error message.
 
 // Commonly used for API calls, file operations, and async tasks.
-
 
 // then(), catch(), finally() are the core functionalities that make working with Promises easier
 // these three methods allow you to manage asynchronous tasks more effectively and with less complexity
@@ -25,11 +23,11 @@ const API_URL = "https://fakestoreapi.com/products/1";
 
 const productPromise = fetch(API_URL);
 
-productPromise
-    .then((response) => response.json())
-    .then(result => console.log(result))
-    .catch(error => console.log("ERROR ", error))
-    .finally(() => console.log(`Everything completed at ${new Date().toLocaleTimeString()}`))
+// productPromise
+//     .then((response) => response.json())
+//     .then(result => console.log(result))
+//     .catch(error => console.log("ERROR ", error))
+//     .finally(() => console.log(`Everything completed at ${new Date().toLocaleTimeString()}`))
 
 
 // ===> Example: Function returning Promise
@@ -75,12 +73,12 @@ function simulateAsyncTask(success) {
     })
 }
 
-simulateAsyncTask(true)
-    // the parameter here (successMessage) is sent as the resolve-method parameter in the promise
-    .then(successMessage => console.log(successMessage))
-    // the parameter here (errorMessage) is sent as the reject-method parameter in the promise
-    .catch(errorMessage => console.log(errorMessage))
-    .finally(() => console.log(`Everything completed at ${new Date().toLocaleTimeString()}`));
+// simulateAsyncTask(true)
+//     // the parameter here (successMessage) is sent as the resolve-method parameter in the promise
+//     .then(successMessage => console.log(successMessage))
+//     // the parameter here (errorMessage) is sent as the reject-method parameter in the promise
+//     .catch(errorMessage => console.log(errorMessage))
+//     .finally(() => console.log(`Everything completed at ${new Date().toLocaleTimeString()}`));
 
 
 
@@ -134,15 +132,88 @@ function step4() {
 }
 
 // ===> Chaining promises to avoid callback hell
-step1()
-    // .then(() => step2())
-    // .then(() => step3())
-    // .then(() => step4())
-    .then(step2)
-    .then(step3)
-    .then(step4)
-    .then(message => console.log(message))
-    .catch(errorMessage => console.log(errorMessage))
-    .finally(() => console.log(`Everything completed at ${new Date().toLocaleTimeString()}`));
+// step1()
+//     // .then(() => step2())
+//     // .then(() => step3())
+//     // .then(() => step4())
+//     .then(step2)
+//     .then(step3)
+//     .then(step4)
+//     .then(message => console.log(message))
+//     .catch(errorMessage => console.log(errorMessage))
+//     .finally(() => console.log(`Everything completed at ${new Date().toLocaleTimeString()}`));
 
 
+
+console.log("");
+console.log("============ Promise All ============");
+// Promise.all() => run multiple async tasks simultaneously
+// If ANY promise rejects, Promise.all rejects immediately
+// Excellent for unrelated tasks !
+
+function taskA() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Task A completed");
+        }, 5000);
+    });
+}
+
+function taskB() {
+    return new Promise((resolve) => {
+        throw new Error("Task B failed!");
+        setTimeout(() => {
+            resolve("Task B completed");
+        }, 2000);
+    });
+}
+
+function taskC() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Task C completed");
+        }, 3000);
+    });
+}
+
+// ===> Example: Run tasks one after another (each one waits for the previous to
+// finish)
+
+// console.time("Sequential Tasks");
+// taskA()
+//     .then(result => {
+//         console.log(result)
+//         return taskB();
+//     })
+//     .then(result => {
+//         console.log(result)
+//         return taskC();
+//     })
+//     .then(result => {
+//         console.log(result)
+//         console.log("All tasks completed");
+//     })
+//     .catch(error => console.log(error))
+//     .finally(() => console.timeEnd("Sequential Tasks")) // ~ 10 seconds (the sum of all tasks durations)
+
+// ===> Example: Run tasks in parallel
+
+// console.time("Parallel Tasks");
+// Promise.all([taskA(), taskB(), taskC()])
+//     .then(results => {
+//         console.log(results); // Note: the order matches the input array, not the order tasks finished in
+//         console.log("All tasks completed");
+//     })
+//     .catch(error => console.log(error))
+//     .finally(() => console.timeEnd("Parallel Tasks")) // ~ 5 seconds (the duration of the longest task)
+
+
+// ===> ***Promise.allSettled***
+// If we want all the results regardless if any failed we can use Promise.allSettled instead of Promise.all
+Promise.allSettled([taskA(), taskB(), taskC()])
+    .then(results => {
+        console.log(results);
+        console.log("All tasks completed");
+    })
+    .catch(error => console.log(error))
+    .finally(() => console.timeEnd("Parallel Tasks"))
