@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+	<meta charset="utf-8">
+ 
+	<title>Module 4 – Under the Hood</title>
+ 
+	<meta name="description" content="JavaScript Advanced - Under the Hood">
+	<meta name="author" content="QA">
+ 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+ 
+	<link rel="stylesheet" href="assets/css/reveal.css">
+	<link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+ 
+	<link rel="stylesheet" href="assets/lib/css/zenburn.css">
+ 
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'assets/text/css';
+		link.href = window.location.search.match(/print-pdf/gi)
+			? 'assets/css/print/pdf.css'
+			: 'assets/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+ 
+<body>
+ 
+	<div class="reveal">
+		<div class="slides">
+ 
+			<!-- Slide 1 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Module 4 – Under the Hood</h1>
+				<h3>How JavaScript Works in the Browser</h3>
+				<p>
+					<small>JavaScript Advanced</small><br>
+					<small>Avenga Academy 2025/26</small>
+				</p>
+			</section>
+ 
+			<!-- Slide 2 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>From Last Class</h2>
+				<ul>
+					<li>What does it mean: functions are first-class citizens?</li>
+					<li>What can we do with functions in JavaScript?</li>
+					<li>What are higher order functions?</li>
+					<li>What are the most used higher order functions?</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 3 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Class Plan</h2>
+				<ul>
+					<li>How code is parsed in the browser</li>
+					<li>When JavaScript is executed</li>
+					<li>Where JavaScript is executed</li>
+					<li>Browser features that help JavaScript</li>
+					<li>Event queue, event loop & browser APIs</li>
+					<li>Callback functions</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>🤖 Ask AI: How Does JavaScript Run?</h2>
+    <ul>
+        <li>Ask AI to explain how JavaScript code runs in the browser</li>
+        <li>Ask it to describe what happens when the browser loads an HTML file</li>
+        <li>Ask AI: Is JavaScript executed all at once or step by step?</li>
+    </ul>
+</section>
+
+ 
+			<!-- Slide 4 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>How Is Everything Parsed?</h2>
+			</section>
+ 
+			<!-- Slide 5 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Parsing & Execution</h2>
+				<ul>
+					<li>JavaScript is executed line by line</li>
+					<li>The browser reads HTML from top to bottom</li>
+					<li>When it reaches a <code>&lt;script&gt;</code> tag, JavaScript starts executing</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 6 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>JavaScript Execution</h2>
+				<ul>
+					<li>The browser engine executes JavaScript code</li>
+					<li>Each browser has its own JS engine</li>
+					<li>Example: Chrome uses V8</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>🤖 Ask AI: Single Thread Explained</h2>
+    <ul>
+        <li>Ask AI: What does it mean that JavaScript is single-threaded?</li>
+        <li>Ask AI to give a simple real-life analogy</li>
+        <li>Ask AI what happens if a long task blocks the main thread</li>
+    </ul>
+</section>
+
+ 
+			<!-- Slide 7 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Where Is JavaScript Executed?</h2>
+			</section>
+ 
+			<!-- Slide 8 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>The JavaScript Thread</h2>
+				<ul>
+					<li>JavaScript runs on a single thread</li>
+					<li>Only one operation can execute at a time</li>
+					<li>Blocking code can freeze the page</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 9 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>How the Browser Helps</h2>
+				<ul>
+					<li>The browser provides additional APIs</li>
+					<li>These APIs handle time-consuming tasks</li>
+					<li>JavaScript delegates work to the browser</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 10 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Browser APIs</h2>
+				<ul>
+					<li>setTimeout / setInterval</li>
+					<li>HTTP requests (AJAX / Fetch)</li>
+					<li>DOM events</li>
+					<li>Web storage</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 11 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Event Queue & Event Loop</h2>
+			</section>
+ 
+			<!-- Slide 12 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Task Queue</h2>
+				<ul>
+					<li>Completed async tasks are queued</li>
+					<li>Callbacks wait in the queue</li>
+					<li>They wait for the call stack to be empty</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 13 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Event Loop</h2>
+				<ul>
+					<li>Monitors the call stack and task queue</li>
+					<li>Moves tasks to the call stack when possible</li>
+					<li>Controls execution order</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 14 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Event Loop Responsibilities</h2>
+				<ul>
+					<li>Decides when JS runs</li>
+					<li>Handles asynchronous callbacks</li>
+					<li>Triggers screen rendering</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>🤖 Ask AI: Event Loop & Async Code</h2>
+    <ul>
+        <li>Ask AI to explain the event loop in beginner-friendly terms</li>
+        <li>Ask AI what happens when setTimeout is used</li>
+        <li>Ask AI how callbacks reach the call stack</li>
+    </ul>
+</section>
+
+ 
+			<!-- Slide 15 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Callback Functions</h2>
+			</section>
+ 
+			<!-- Slide 16 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Are Callback Functions?</h2>
+				<ul>
+					<li>Functions passed to other functions</li>
+					<li>Executed after some task finishes</li>
+					<li>Common in async operations</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 17 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Callbacks & Asynchronous Code</h2>
+				<ul>
+					<li>Used with browser APIs</li>
+					<li>Executed through the event loop</li>
+					<li>Help prevent blocking the main thread</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 18 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Thank You!</h1>
+				<p><strong>Questions?</strong></p>
+			</section>
+ 
+		</div>
+	</div>
+ 
+	<script src="assets/lib/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+ 
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			mouseWheel: true
+		});
+	</script>
+ 
+</body>
+</html>
