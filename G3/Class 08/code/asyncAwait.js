@@ -21,7 +21,6 @@ async function printAllMessages(){
     console.log(`Wait some time message response: ${message}`); //(5) - after waitSomeTime was finished, resolved, this line can be executed
 }
 
-
 console.log("Message at the start!"); //(1) 
 printAllMessages(); //(2) - the call of print AllMessages
 console.log("Message after the call"); //(4) - while the rest of the code in printAllMessages waits for the waitSomeTime to finish, the rest of the code can continue

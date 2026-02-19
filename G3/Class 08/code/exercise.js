@@ -24,7 +24,7 @@ button.addEventListener("click", async function(){
     //     getBorderingCountries(data.borders);
     // })
 
-    let response = await getCountryByCode(countryInput.value);
-    console.log(response);
-    getBorderingCountries(response.borders);
+    let result = await getCountryByCode(countryInput.value);
+    console.log(result);
+    getBorderingCountries(result.borders);
 })
