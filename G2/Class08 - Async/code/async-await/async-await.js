@@ -94,6 +94,11 @@ async function fetchProduct() {
 async function getProducts() {
     try {
         const response = await fetch(apiUrl);
+        console.log(response);
+        if (!response.ok) {
+            throw new Error("Fetching products failed!")
+            // return;
+        }
         const products = await response.json();
         return products;
     } catch (error) {
