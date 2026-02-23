@@ -1,3 +1,5 @@
+// 'use strict'
+
 console.log("======================= OBJECTS PART 1 =======================");
 // => representation of entities that exist in the real world
 // => consists of PROPERTIES and METHODS
@@ -119,9 +121,109 @@ console.log("=========== The 'document' object ===========");
 // represents the web page (HTML&CSS) loaded in the window and provides methods and properties to interact with the HTML document
 
 
-
+console.clear();
 console.log("");
 console.log("======================= OBJECT BUILT-IN METHODS =======================");
 
+// ***create***
+// => method that accepts an object as a parameter and will return a new object with the inherited entities from the object passed as the argument 
+
+const person = {
+    firstName: "Bob",
+    lastName: "Bobsky",
+    greet: function () {
+        console.log("Hello!");
+    }
+}
+console.log(person);
+
+const bob = Object.create(person);
+console.log(bob);
+
+console.log(bob.firstName);
+
+const anonymousObj = Object.create(null);
+console.log(anonymousObj);
 
 
+// ***assign***
+// => method that can merge two objects into one. It accepts two objects and tries to merge the second object into the first one
+const bobAddress = {
+    street: "Bobsky St.",
+    city: "Skopje"
+}
+
+Object.assign(bob, bobAddress)
+console.log(bobAddress);
+console.log(bob);
+
+const bobsInfo = Object.assign(bob, bobAddress);
+
+
+
+console.log("");
+console.log("============== Exploring the object ==============");
+
+const barnie = {
+    name: "Barnie",
+    age: 1,
+    bark: function () {
+        console.log("Aw Aw Aw !");
+    },
+}
+
+// *** keys ***
+// => returns all the property and method names of our object in an array
+const barniesKeys = Object.keys(barnie);
+console.log(barniesKeys);
+
+// *** values ***
+// => returns all values from our properties and methods ( the whole functions ) in an array
+const barniesValues = Object.values(barnie);
+console.log(barniesValues);
+
+// *** entries ***
+// => returns an array of arrays that have a key and value pair
+const keyValuePairs = Object.entries(barnie);
+console.log(keyValuePairs);
+
+
+// *** for..in loop ***
+// for...in goes through all the KEYS of an object
+for (let key in barnie) {
+    console.log(key);
+    console.log(barnie[key]);
+    console.log(`${key}: ${barnie[key]}`);
+}
+
+
+
+console.clear();
+console.log("");
+console.log("============== Changing the object accessibility ==============");
+
+
+// *** freeze ***
+// => lock our object for any modifications
+// => adding new properties/methods is not allowed
+// => changing the values of existing is also not allowed
+
+Object.freeze(barnie);
+console.log(barnie);
+barnie.color = "white"; // won't add new property
+barnie.name = "Chapo"; // won't change the existing value
+console.log(barnie);
+
+// *** seal ***
+// => can't add new properties or methods
+// => can change the existing ones
+
+const marley = {
+    name: "Marley",
+    color: "brown"
+}
+
+Object.seal(marley)
+marley.age = 2;  // won't add new property
+marley.color = "black";  // will change the existing value with the newly assigned
+console.log(marley);
