@@ -102,12 +102,139 @@ console.log(getUserFullNameWith(userObj));
 
 
 
+console.clear();
 console.log("");
 console.log("============== Array Destructuring ==============");
 
 
+const testArray = [100, 300, 5_000, 400, 10_000];
+
+// ===> Example: take first 3 items from the array (WITHOUT DESCTRUCTURING)
+const firstNum = testArray[0];
+const secondNum = testArray[1];
+const thirdNum = testArray[2];
+
+console.log(firstNum, secondNum, thirdNum);
+
+// ===> Example: take first 3 items from the array (WITH DESCTRUCTURING)
+const [itemOne, itemTwo, broj3, , item5] = testArray;
+console.log(itemOne, itemTwo, broj3, item5);
+
+// ===> Example: take first and third div with class array-demo (WITH DESCTRUCTURING)
+const [firstDiv, , thirdDiv] = document.querySelectorAll(".array-demo");
+
+console.log(firstDiv);
+// console.log(secondDiv); 
+console.log(thirdDiv);
+
+
+// ===> Example: Destructuring with default values 
+
+const testArrayTwo = ["First string", "Second string"]
+
+// => if there isn't third item in the array, use the default value
+const [firstString, secondString, thirdString = "Third string"] = testArrayTwo
+
+console.log(firstString, secondString, thirdString);
+
+
+// ===> Example: Swapping variables using array destructuring
+let a = 10, b = 20, c = 30;
+// let b = 20;
+// let c = 30;
+// let temp = a;
+// a = b;
+// b = temp;
+// console.log(a);
+// console.log(b);
+
+// => With Destructuring
+[a, b] = [b, a];
+console.log(a); // 20
+console.log(b); // 10
 
 
 
+console.clear();
+console.log("");
+console.log("============== Spread operator ==============");
+// The spread operator (...) is used to expand iterable elements (arrays, objects, strings) into individual elements or properties 
+// It is commonly used for copying, merging and passing elements as arguments to functions
+
+const numbers = [-5, 10, 34, 350, 123, 10_000, 43];
+
+console.log(numbers); // prints the whole array object
+console.log(...numbers); // prints only the values
+
+// *** Spread in fucntion calls ***
+
+console.log(Math.max(numbers)); // NaN
+console.log(Math.max(...numbers)); // 10_000
 
 
+// *** Spread with Arrays ***
+const dogs = ["Bax", "Axe", "Chapo"];
+const cats = ["Zuza", "Missy"];
+
+// ===> Example: merge 2 arrays into 1 (WITH SPREAD)
+const allPets = [...dogs, ...cats];
+console.log(allPets);
+
+// ===> Example: create copy of dogs array
+const dogsCopy = [...dogs]
+dogsCopy.push("Berta");  // won't change the original dogs array
+console.log(dogs);
+console.log(dogsCopy);
+
+
+// *** Spread with Objects ***
+// ===> Example: merge 2 objects into 1 (WITH SPREAD)
+
+const dog = {
+    name: "Aks",
+    breed: "Pug"
+};
+
+const dogDescription = {
+    group: "Toy",
+    color: "Appricot Fawn",
+    origin: "China"
+}
+
+// Object.assign(dog, dogDescription)
+console.log(dog);
+
+const aksDogInfo = { ...dog, ...dogDescription, isHappy: true }
+console.log(aksDogInfo);
+
+// *** Spread with Strings ***
+// ===> Example: Converts a string into an array of characters
+const word = "Hello";
+const letters = [...word]
+console.log(letters);
+
+
+console.log("");
+console.log("============== Rest operator ==============");
+
+const students = ["Bob", "Jill", "John", "Steve", "Rob"];
+
+const [bob, jill, ...restStudents] = students;
+
+console.log(bob);
+console.log(jill);
+console.log(restStudents);
+
+
+// ===> Example: function that sums random count of numbers passed as arguments
+
+// function sum(num1, num2, num3) {
+//     return num1 + num2 + num3;
+// }
+
+// console.log(sum(3, 4, 5));
+
+function sum(...nums) {
+    return nums?.length ? nums.reduce((acc, curr) => acc + curr) : 0;
+}
+console.log(sum(32432, -3434, 54, -100000));
