@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Objects Part 1</title>
+
+	<meta name="description" content="JavaScript Advanced - Objects">
+	<meta name="author" content="QA">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="assets/css/reveal.css">
+	<link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+
+	<link rel="stylesheet" href="assets/lib/css/zenburn.css">
+
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'assets/text/css';
+		link.href = window.location.search.match(/print-pdf/gi)
+			? 'assets/css/print/pdf.css'
+			: 'assets/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+
+			<!-- Slide 1 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Objects Part 1</h1>
+				<h3>Advanced Object Features</h3>
+				<p>
+					<small>JavaScript Advanced</small><br>
+					<small>Avenga Academy 2025/26</small>
+				</p>
+			</section>
+
+			<!-- Slide 2 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>From Last Class</h2>
+				<ul>
+					<li>What is asynchronous code?</li>
+					<li>What is callback hell?</li>
+					<li>How do we get callback hell?</li>
+					<li>What is the solution?</li>
+					<li>What are promises useful for?</li>
+				</ul>
+			</section>
+
+			<!-- Slide 3 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Class Plan</h2>
+				<ul>
+					<li><code>this</code> keyword in objects</li>
+					<li>Destructuring objects</li>
+					<li>Spread operator</li>
+					<li>Object methods</li>
+				</ul>
+			</section>
+
+			<!-- AI Slide: Exploring Entities with AI -->
+			<section style="text-align: left;" data-background="#f0f0f0">
+				<h2>AI Exercise: Representing Real-World Entities</h2>
+				<ul>
+					<li>Ask AI: "How can we represent a person, car, or product as an object in JavaScript?"</li>
+					<li>Ask AI: "Explain why using objects is better than separate variables for each attribute."</li>
+					<li>Ask AI: "Which properties and methods would be appropriate for these objects?"</li>
+					<li>Ask AI: "Show examples of creating multiple objects without repeating code."</li>
+				</ul>
+			</section>
+
+
+			<!-- Slide 4 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>The <code>this</code> Keyword</h2>
+			</section>
+
+			<!-- Slide 5 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Is <code>this</code>?</h2>
+				<ul>
+					<li><code>this</code> points to the current object</li>
+					<li>Used to access object properties and methods</li>
+					<li>Its value depends on how a function is called</li>
+				</ul>
+			</section>
+
+			<!-- Slide 6 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2><code>this</code> in Object Methods</h2>
+				<ul>
+					<li>Points to the object the method belongs to</li>
+					<li>Works as expected with the <code>function</code> keyword</li>
+					<li>Commonly used in object-oriented code</li>
+				</ul>
+			</section>
+
+			<!-- Slide 7 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2><code>this</code> in Arrow Functions</h2>
+				<ul>
+					<li>Arrow functions do not have their own <code>this</code></li>
+					<li>They inherit <code>this</code> from the surrounding scope</li>
+					<li>Can cause unexpected behavior in objects</li>
+				</ul>
+			</section>
+			<!-- Slide 11 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Object Methods</h2>
+			</section>
+
+			<!-- Slide 12 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Object Constructor Methods</h2>
+				<ul>
+					<li>The <code>Object</code> constructor provides useful methods</li>
+					<li>Used for inspecting and manipulating objects</li>
+				</ul>
+			</section>
+
+			<!-- Slide 13 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Common Object Methods</h2>
+				<ul>
+					<li><code>Object.keys()</code></li>
+					<li><code>Object.values()</code></li>
+					<li><code>Object.entries()</code></li>
+				</ul>
+			</section>
+
+			<!-- Slide 14 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Creating Objects</h2>
+				<ul>
+					<li>Create new objects of a certain type</li>
+					<li>Use object literals or constructors</li>
+					<li>Reusable object structures</li>
+				</ul>
+			</section>
+
+			<!-- Slide 15 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Thank You!</h1>
+				<p><strong>Questions?</strong></p>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="assets/lib/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			mouseWheel: true
+		});
+	</script>
+
+</body>
+
+</html>
