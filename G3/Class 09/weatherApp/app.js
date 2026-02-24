@@ -145,7 +145,7 @@ let statisticsService = {
           }
 
           return result;
-        }, initialValues);
+        }, initialValues);  //let res = result; //by refernce
 
         //initialValues is the object which we use as inital value for reduce
         //it is being passed in each iteration of reduce
