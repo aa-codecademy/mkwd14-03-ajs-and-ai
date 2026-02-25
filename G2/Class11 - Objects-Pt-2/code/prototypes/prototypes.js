@@ -73,6 +73,7 @@ animalDog.makeSound();
 console.clear();
 console.log("");
 console.log("========== Object.setPrototypeOf ==========");
+// Used to change the prototype of an existing object
 
 const swimAbility = {
     isGoodSwimmer: false,
@@ -81,14 +82,26 @@ const swimAbility = {
     }
 }
 
-
+// ===> Example: Swimming Turtle :)
 const turtle = new Animal("Turtle");
+// turtle.swim(); // ERROR
+
 // Object.setPrototypeOf(turtle, swimAbility);
+// ===> Problem: by using the method we are completely replacing the prototype of turtle, meaning it loses access to the Animal.prototype methods (makeSound...)
+turtle.eat();
+// turtle.makeSound(); // ERROR
+turtle.swim();
+
+// ===> Solution: first set the Animal.prototype as prototype to swimAbility object
 Object.setPrototypeOf(swimAbility, Animal.prototype);
 Object.setPrototypeOf(turtle, swimAbility);
-
 turtle.eat();
 turtle.makeSound();
 turtle.swim();
+
+
+console.log("");
+console.log("========== Object.getPrototypeOf ==========");
+// Used to check the prototype of an object
 
 console.log(Object.getPrototypeOf(turtle));
