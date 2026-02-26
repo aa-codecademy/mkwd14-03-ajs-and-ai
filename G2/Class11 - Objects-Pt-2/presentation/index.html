@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Objects Part 2</title>
+
+	<meta name="description" content="JavaScript Advanced - Inheritance">
+	<meta name="author" content="QA">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+	<link rel="stylesheet" href="assets/css/reveal.css">
+	<link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+
+	<link rel="stylesheet" href="assets/lib/css/zenburn.css">
+
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'assets/text/css';
+		link.href = window.location.search.match(/print-pdf/gi)
+			? 'assets/css/print/pdf.css'
+			: 'assets/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+
+			<!-- Slide 1 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Objects (Part 2)</h1>
+				<h3>Inheritance</h3>
+				<p>
+					<small>JavaScript Advanced</small><br>
+					<small>Avenga Academy 2025/26</small>
+				</p>
+			</section>
+
+			<!-- Slide 2 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>From Last Class</h2>
+				<ul>
+					<li>What is <code>this</code> in objects?</li>
+					<li>When do we use it?</li>
+					<li>How can we get all the keys or values from an object?</li>
+				</ul>
+			</section>
+
+			<!-- Slide 3 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Class Plan</h2>
+				<ul>
+					<li>What is inheritance in OOP</li>
+					<li>Prototypal inheritance</li>
+					<li>The prototype chain</li>
+					<li>Constructor</li>
+				</ul>
+			</section>
+
+			<!-- Slide 4 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>What Is Inheritance?</h2>
+			</section>
+
+			<section style="text-align: left;" data-background="#fff">
+				<h2>AI Assistance: What Is Inheritance 🤖</h2>
+				<ul>
+					<li>Ask AI: "Explain inheritance in programming in simple terms."</li>
+					<li>Ask AI: "Give real-world examples of inheritance."</li>
+					<li>Ask AI: "Show me how inheritance works in JavaScript with objects."</li>
+					<li>Ask AI: "Compare prototypal inheritance vs class-based inheritance."</li>
+					<li>Ask AI: "Draw a diagram of the prototype chain for a Student object."</li>
+				</ul>
+			</section>
+
+
+			<!-- Slide 5 -->
+			<section style="text-align: left;" data-background="#fff">
+				<ul>
+					<li>One of the core concepts of OOP</li>
+					<li>It is a process of basing one object on the model of another schematic or template</li>
+					<li>JavaScript uses only objects, so it has prototypal inheritance</li>
+				</ul>
+			</section>
+
+			<!-- Slide 6 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Prototypal Inheritance</h2>
+			</section>
+
+			<!-- Slide 7 -->
+			<section style="text-align: left;" data-background="#fff">
+				<ul>
+					<li>Unlike class-based inheritance, prototypal inheritance inherit directly from objects instead of
+						classes</li>
+					<li>When objects are inheriting, they create a prototype chain</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#fff">
+				<h2>AI Assistance: Understanding Prototypes 🤖</h2>
+				<ul>
+					<li>Ask AI: "Explain prototypes in JavaScript in simple terms."</li>
+					<li>Ask AI: "What is the difference between an object and its prototype?"</li>
+					<li>Ask AI: "Show examples of prototype inheritance in JavaScript."</li>
+					<li>Ask AI: "Draw a prototype chain diagram for multiple objects."</li>
+					<li>Ask AI: "Explain how methods are shared through prototypes."</li>
+				</ul>
+			</section>
+
+
+			<!-- Slide 8 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>The Prototype Chain</h2>
+			</section>
+
+			<!-- Slide 9 -->
+			<section style="text-align: left;" data-background="#fff">
+				<ul>
+					<li>Objects are linked together through prototypes</li>
+					<li>JavaScript looks up properties through the prototype chain</li>
+				</ul>
+			</section>
+
+			<!-- Slide 10 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Constructor</h2>
+			</section>
+
+			<!-- Slide 11 -->
+			<section style="text-align: left;" data-background="#fff">
+				<ul>
+					<li>Constructor functions are usually used for inheritance</li>
+					<li>All objects built from that constructor function inherit the same properties and methods</li>
+					<li>This ensures consistency across created objects</li>
+				</ul>
+			</section>
+
+			<!-- Slide 12 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Thank You!</h1>
+				<p><strong>Questions?</strong></p>
+			</section>
+
+		</div>
+	</div>
+
+	<script src="assets/lib/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			mouseWheel: true
+		});
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+	<meta charset="utf-8">
+ 
+	<title>Module 5 – JavaScript Asynchronous</title>
+ 
+	<meta name="description" content="JavaScript Advanced - Asynchronous JavaScript">
+	<meta name="author" content="QA">
+ 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+ 
+	<link rel="stylesheet" href="assets/css/reveal.css">
+	<link rel="stylesheet" href="assets/css/theme/white.css" id="theme">
+ 
+	<link rel="stylesheet" href="assets/lib/css/zenburn.css">
+ 
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'assets/text/css';
+		link.href = window.location.search.match(/print-pdf/gi)
+			? 'assets/css/print/pdf.css'
+			: 'assets/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+ 
+<body>
+ 
+	<div class="reveal">
+		<div class="slides">
+ 
+			<!-- Slide 1 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Module 5 – JavaScript Asynchronous</h1>
+				<h3>Handling Asynchronous Code</h3>
+				<p>
+					<small>JavaScript Advanced</small><br>
+					<small>Avenga Academy 2025/26</small>
+				</p>
+			</section>
+ 
+			<!-- Slide 2 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>From Last Class</h2>
+				<ul>
+					<li>When is our JavaScript code executed?</li>
+					<li>Where is JavaScript code executed?</li>
+					<li>Why is JavaScript not stuck when we call <code>setTimeout()</code>?</li>
+					<li>How does the browser help JavaScript execution?</li>
+					<li>What is a callback function?</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 3 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Class Plan</h2>
+				<ul>
+					<li>What is callback hell</li>
+					<li>Avoiding callback hell with promises</li>
+					<li>Promise resolving</li>
+					<li>Async / Await in JavaScript</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 4 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Asynchronous JavaScript</h2>
+			</section>
+ 
+			<!-- Slide 5 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Is Asynchronous Execution?</h2>
+				<ul>
+					<li>Multiple tasks can be in progress at the same time</li>
+					<li>JavaScript does not wait for long operations</li>
+					<li>Results are handled when tasks finish</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>🤖 Ask AI: Understanding Asynchronous JavaScript</h2>
+    <ul>
+        <li>Ask AI to explain what asynchronous execution means in simple terms</li>
+        <li>Ask AI to give real-life examples of asynchronous tasks (like cooking, waiting for a file download)</li>
+        <li>Ask AI why JavaScript doesn’t block when tasks take time</li>
+    </ul>
+</section>
+
+ 
+			<!-- Slide 6 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Callbacks Recap</h2>
+				<ul>
+					<li>Callbacks ensure correct execution order</li>
+					<li>Common in async operations</li>
+					<li>Used with browser APIs</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 7 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Problems with Callbacks</h2>
+				<ul>
+					<li>Hard to read</li>
+					<li>Hard to maintain</li>
+					<li>Hard to debug</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 8 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Callback Hell</h2>
+			</section>
+ 
+			<!-- Slide 9 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Is Callback Hell?</h2>
+				<ul>
+					<li>Large nested callback structures</li>
+					<li>Callbacks inside callbacks inside callbacks</li>
+					<li>Also known as the “pyramid of doom”</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 10 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Why Callback Hell Is Bad</h2>
+				<ul>
+					<li>Difficult to read</li>
+					<li>Difficult to scale</li>
+					<li>Difficult to handle errors</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>🤖 Ask AI: Callback Hell Explained</h2>
+    <ul>
+        <li>Ask AI to illustrate callback hell with a simple example</li>
+        <li>Ask AI why nested callbacks make code hard to read and maintain</li>
+        <li>Ask AI how promises can solve this problem</li>
+    </ul>
+
+    <p><strong>Additional prompts:</strong></p>
+    <ul>
+        <li>Can you rewrite a nested callback into a flatter structure?</li>
+        <li>How would error handling change?</li>
+    </ul>
+</section>
+
+ 
+			<!-- Slide 11 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Promises</h2>
+			</section>
+ 
+			<!-- Slide 12 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Are Promises?</h2>
+				<ul>
+					<li>A modern way to handle async tasks</li>
+					<li>Represent a future value</li>
+					<li>Either resolved or rejected</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 13 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Why Promises?</h2>
+				<ul>
+					<li>Cleaner code</li>
+					<li>Easier to read and organize</li>
+					<li>Avoid deep callback nesting</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 14 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Promise Resolving</h2>
+				<ul>
+					<li>A promise resolves when the async task finishes</li>
+					<li>The result is passed to <code>.then()</code></li>
+					<li>Errors are handled with <code>.catch()</code></li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 15 -->
+			<section style="text-align: left;" data-transition="slide" data-background="#007ac9">
+				<h2>Async / Await</h2>
+			</section>
+ 
+			<!-- Slide 16 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>What Is Async / Await?</h2>
+				<ul>
+					<li>A cleaner syntax for working with promises</li>
+					<li>Makes async code look synchronous</li>
+					<li>Easier to understand and maintain</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 17 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Async / Await Under the Hood</h2>
+				<ul>
+					<li>Still uses promises internally</li>
+					<li><code>await</code> pauses execution inside the function</li>
+					<li>Does not block the main thread</li>
+				</ul>
+			</section>
+ 
+			<!-- Slide 18 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h2>Why Use Async / Await?</h2>
+				<ul>
+					<li>Better readability</li>
+					<li>Simpler error handling</li>
+					<li>Less boilerplate code</li>
+				</ul>
+			</section>
+
+			<section style="text-align: left;" data-background="#f7f7f7">
+    <h2>🤖 Ask AI: Async / Await Deep Dive</h2>
+    <ul>
+        <li>Ask AI to show a before-and-after example: promises vs async/await</li>
+        <li>Ask AI to explain why async/await doesn’t block the main thread</li>
+        <li>Ask AI to give common pitfalls when using async/await</li>
+    </ul>
+</section>
+
+ 
+			<!-- Slide 19 -->
+			<section style="text-align: left;" data-background="#fff">
+				<h1>Thank You!</h1>
+				<p><strong>Questions?</strong></p>
+			</section>
+ 
+		</div>
+	</div>
+ 
+	<script src="assets/lib/js/head.min.js"></script>
+	<script src="assets/js/reveal.js"></script>
+ 
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'convex',
+			transitionSpeed: 'default',
+			mouseWheel: true
+		});
+	</script>
+ 
+</body>
+</html>

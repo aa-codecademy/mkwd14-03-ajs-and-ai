@@ -217,7 +217,6 @@ Since you have completed Advanced JavaScript, the following is expected:
 
 | Resource | Link |
 |---|---|
-| "How to Build a Shopping Cart with Vanilla JS" — freeCodeCamp | [freecodecamp.org](https://www.freecodecamp.org/news/how-to-build-a-shopping-cart-with-javascript/) |
 | Fake Store API Docs | [fakestoreapi.com](https://fakestoreapi.com/) |
 | DummyJSON Docs | [dummyjson.com/docs](https://dummyjson.com/docs/products) |
 | Platzi Fake Store API Docs | [api.escuelajs.co/docs](https://api.escuelajs.co/docs) |
