@@ -18,7 +18,8 @@ console.log(dog.name); // Sparky
 //assign - copies the properties and methods from one object to another, but it is the same object in memory (same reference)
 let addressInfo = {
     street: "Dog street",
-    streetNumber: 123
+    streetNumber: 123,
+    isHappy: false //it will overwrite the isHappy property of the dog object, because it is the same object in memory
 }
 
 console.log(dog.street); // undefined
@@ -27,6 +28,7 @@ console.log(dog.street); // undefined
 let dogUpdate = Object.assign(dog, addressInfo); //the dog will now have its own properties plus the properties of the addressInfo
 //the dogUpdate object is the same as the dog object, but it has all the properties and methods of the addressInfo object
 //the dog object and dogUpdate are referencing the same object in memory, so any changes to one will affect the other
+console.log("After assign:");
 console.log(dog);
 console.log(dogUpdate);
 console.log(addressInfo); // the addressInfo object is not changed, it is still the same object in memory, but the dog object now has all the properties of the addressInfo object
