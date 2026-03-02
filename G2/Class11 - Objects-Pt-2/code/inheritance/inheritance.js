@@ -23,7 +23,7 @@ function Developer(firstName, lastName, age, salary, programmingLanguages, datab
 
 function Tester(firstName, lastName, age, salary, bugsFound, automationFramework) {
     Object.setPrototypeOf(this, new Employee(firstName, lastName, age, salary))
-    // Employee.call(this, firstName, lastName, age, salary)
+    Employee.call(this, firstName, lastName, age, salary)
     // this.firstName = firstName;
     // this.lastName = lastName;
     // this.age = age;
