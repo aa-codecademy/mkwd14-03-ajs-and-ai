@@ -80,6 +80,19 @@ console.log(shortenString);
 
 console.log("");
 console.log("============== GET / SET ==============");
+// => *GETTER* is a method that is used to get the value of a specific property. It is invoked without the use of parentheses when the property is accessed
+// => *SETTER* is a method that is used to set the value of a specific property. It is invoked when the property is assigned a new value
+
+// => GETTER SYNTAX: get propertyName() { return this._propertyName; }
+// => SETTER SYNTAX: set propertyName(value) { this._propertyName = value; }
+// => NOTE: The internal property name inside getters and setters is usually prefixed with an UNDERSCORE (_) to avoid naming conflicts (example: this._propertyName).
+
+// => Use cases:
+// 1) data validation
+// 2) encapsulation
+// 3) access control etc...
+
+// ***NOTE*** => Get & Set work under the hood without the need for explicitly creating them. We create them ONLY in cases where we want to do some checks, validations, restrict access.. of some of the properties
 
 
 class Product {
@@ -91,11 +104,13 @@ class Product {
         this.price = price;
     }
 
+    // Getter for price - returns formatted price string
     get price() {
         console.log("HELLO FROM PRICE PROPERTY GETTER");
         return `$${this._price.toFixed(2)}`;
     }
 
+    // Setter for price - ensures price is not negative
     set price(value) {
         console.log("HELLO FROM PRICE PROPERTY SETTER", value);
         if (value < 0) {
@@ -124,16 +139,20 @@ const product = new Product("Smartphone", 1000)
 console.log(product);
 console.log(product.name);
 product.price = 2000;
-console.log(product.price);
-product.price = -100;
+console.log(product.price); // $2000.00
+product.price = -100; // Invalid update
 
-product.id = 1342424;
+product.id = 1342424; // Invalid update
 
 
 
 console.log("=================== PRIVATE FIELDS ===================");
+// => Private fields and methods are declared with a # prefix
+// => They are ONLY accessible within the class body - not from instances, subclasses, or anywhere outside
+// => They MUST be declared at the top level of the class, outside the constructor
 
 class User {
+    // ===> Private fields
     #password;
 
     constructor(username, email, password) {
@@ -143,18 +162,17 @@ class User {
         this.createdAt = new Date().toLocaleDateString();
     }
 
+    // ===> Private methods - internal use only
     #hashPassword(password) {
+        // Simple hash simulation with 'salt & papper'
         return `hashed_${password}_123`;
     }
 
-    changedPassword(newPassword) {
+    changePassword(oldPassword, newPassword) {
         // logic...
     }
 }
 
-
 const user1 = new User("john_doe", "john@mail.com", "securePass1!");
 console.log(user1);
 console.log(user1.password);
-
-
