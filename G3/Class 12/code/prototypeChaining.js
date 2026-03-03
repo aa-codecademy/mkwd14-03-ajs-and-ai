@@ -1,4 +1,4 @@
-export function BaseEntity(id, name){
+ function BaseEntity(id, name){
     debugger
     this.id = id;
     this.name = name;

@@ -27,3 +27,9 @@ function Student(firstname, lastname, age, academyName, studentId){
 
 let student1 = new Student("Petko", "Petkov", 25, "Avenga", 12345);
 console.log(student1);  
+
+Person.prototype.checkAcademy = function(student){
+    console.log("The academy of the student is "+ student.academyName);
+}
+
+console.log(student1);  
