@@ -1,4 +1,18 @@
-// models
+/*
+    ============================================================
+    ⚠️ DEMO PURPOSES ONLY — DO NOT USE THIS APPROACH 
+    ============================================================
+    > This file intentionally puts everything in one place to 
+    demonstrate what code looks like BEFORE being split into modules
+    > This is the WORST way to organize JavaScript because:
+        - Everything pollutes the global scope
+        - No separation of concerns - models, services and logic are tangled
+        - Nothing is reusable or importable by other files
+        - Hard to maintain and scale as the project grows
+    >>> See app.js for the correct modular approach <<<
+    ============================================================
+*/
+
 class User {
     constructor(name, email, age) {
         this.name = name;
