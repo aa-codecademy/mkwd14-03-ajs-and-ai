@@ -58,3 +58,4 @@ class Manager extends Employee {
 
 const dev = new Developer("Bob", "Bobsky", 32, 23234, ["JavaScript", "C#"], "SQL");
 dev.developFeature("Portfolio Website");
+dev.printInfo();

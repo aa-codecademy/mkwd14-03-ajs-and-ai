@@ -175,4 +175,4 @@ class User {
 
 const user1 = new User("john_doe", "john@mail.com", "securePass1!");
 console.log(user1);
-console.log(user1.password);
+// console.log(user1.#password); // ERROR!
