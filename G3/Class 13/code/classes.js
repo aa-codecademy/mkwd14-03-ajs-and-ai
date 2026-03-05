@@ -48,6 +48,9 @@ class Car extends WheeledVehicle {
         this.hasAc = hasAc;
     }
     buyCar(money) {
+        if(!money){
+            console.log("You need to enter a value!")
+        }
         money >= this.price ? console.log("Congrats, you bought a car!") : console.log("Sorry!");
     }
 
@@ -68,7 +71,7 @@ class Car extends WheeledVehicle {
 }
 
 let firstCar = new Car(5, "BMW", "342", 20000, 4, "SK1234AB", true);
-firstCar.buyCar(); //we call the properties and methods using the object (the instance)
+firstCar.buyCar(10000); //we call the properties and methods using the object (the instance)
 console.log(firstCar.numOfWheels);
 console.log(firstCar);
 
