@@ -1,7 +1,5 @@
 # Agentic AI & Context Engineering
 
----
-
 ## 1. What is an AI Agent?
 
 A regular AI interaction looks like this:
@@ -26,11 +24,11 @@ You are not giving it a prompt. You are giving it a **mission**.
 
 In this project, Claude Code is the agent. You give it the goal
 ("build CountrySearch") and it reads your `.md` files, writes every file,
-and verifies itself against `DONE.md` — without you typing another word.
+and verifies itself against `ACCEPTANCE.md` — without you typing another word.
 
 ---
 
-## 2. What Makes an Agent "Autonomous"?
+## 2. What Makes an Agent "(Semi)Autonomous"?
 
 An autonomous agent has three properties:
 
@@ -87,14 +85,14 @@ tells it where everything else is.
 This project uses **7 files**, each with a single responsibility:
 
 ```
-README.md           ← Entry point. Reading order. Rules.
+AGENT.md            ← Entry point. Reading order. Rules.
 PROJECT.md          ← What to build. What NOT to build. Constraints.
 ARCHITECTURE.md     ← Folder structure. Module responsibilities.
 MODELS.md           ← Data shapes. How data flows between modules.
 API.md              ← External API. Endpoints. Error cases.
 FEATURES.md         ← UI behaviour. Edge cases. UX rules.
 STYLING.md          ← Visual design. Layout. CSS guidelines.
-DONE.md             ← Acceptance checklist. Self-verification.
+ACCEPTANCE.md             ← Acceptance checklist. Self-verification.
 ```
 
 Each file answers a different question the agent will have as it builds:
@@ -104,7 +102,7 @@ Each file answers a different question the agent will have as it builds:
 > *"What does the data look like?"* → `MODELS.md`
 > *"How do I call the API?"* → `API.md`
 > *"What should this button do?"* → `FEATURES.md`
-> *"Am I done?"* → `DONE.md`
+> *"Am I done?"* → `ACCEPTANCE.md`
 
 If any of these questions go unanswered, the agent guesses.
 When the agent guesses, you get inconsistency.
@@ -152,7 +150,7 @@ That is exactly what this `.md` file system does:
 ```
 You (tech lead)         →   Writes the .md files
 Claude Code (junior)    →   Reads the .md files, builds the app
-DONE.md                 →   The code review checklist
+ACCEPTANCE.md                 →   The code review checklist
 ```
 
 The better your `.md` files, the better the output — every time.
@@ -167,7 +165,7 @@ By building CountrySearch with this approach, you practised:
 - **Designing before building** — the spec exists before a single `.js` file
 - **Data modelling** — defining shapes in `MODELS.md` before any class is written
 - **API-first thinking** — `API.md` treats the external service as a contract
-- **Acceptance-driven development** — `DONE.md` defines "done" before work starts
+- **Acceptance-driven development** — `ACCEPTANCE.md` defines "done" before work starts
 
 These are professional software engineering skills. The agent is a tool.
 The thinking behind the `.md` files is the skill.
